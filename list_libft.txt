@@ -6,10 +6,10 @@ OK isprint
 OK strlen  
 memset  
 bzero
-memcp
+OK memcpy
 memmove
-strlcpy 
-strlcat
+OK strlcpy 
+OK strlcat
 OK toupper
 OK tolower
 OK strchr

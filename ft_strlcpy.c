@@ -1,1 +1,21 @@
-size_t strlcpy(char *dst, char *src, size_t dstsize)
+#include "ft_strlen.c"
+
+size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
+{
+	size_t len;
+	size_t	i;
+
+	len = strlen(src);
+	i = 0;
+	if (dstsize == 0)
+	{
+		return (dstsize);
+	}
+	while (src[i] != '\0' && i < (dstsize - 1))
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (len);
+}
