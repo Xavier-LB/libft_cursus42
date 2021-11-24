@@ -1,4 +1,3 @@
-
 /*
 #include <stdio.h>
 #include <string.h>
@@ -13,24 +12,19 @@ int	main(int ac, char *av[])
 */
 
 #include <stdio.h>
-#include <string.h>
+#include <bsd/string.h>
 #include <stdlib.h>
 
-void test(int size)
+int main()
 {
     char string[] = "Hhello world!";
     char buffer[19];
+    size_t size = 12;
     int r;
 
     r = strlcpy(buffer,string,size);
 
     printf("Copied '%s' into '%s', length %d\n", string, buffer, r);
-}
 
-int main(int ac, char *av[])
-{
-	(void)	ac;
-    test(atoi(av[1]));
-
-    return(0);
+//    return(0);
 }
