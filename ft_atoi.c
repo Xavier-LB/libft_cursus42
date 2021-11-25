@@ -1,14 +1,29 @@
-int ft_atoi(char *str)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xle-baux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/25 15:24:30 by xle-baux          #+#    #+#             */
+/*   Updated: 2021/11/25 16:48:37 by xle-baux         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+int	ft_atoi(char *str)
 {
-	int i;
-	int sign;
-	int nb;
+	int	i;
+	int	sign;
+	int	nb;
 
 	i = 0;
 	sign = 1;
 	nb = 0;
-	while (str[i] == '\t' || str[i] == '\t' || str[i] == '\n' || str[i] == '\f' || str[i] == '\r' || str[i] == ' ')
-	i++;
+	while (str[i] == '\t' || str[i] == '\v' || str[i] == '\n'
+		|| str[i] == '\f' || str[i] == '\r' || str[i] == ' ')
+		i++;
 	if (str[i] == '-')
 	{
 		sign = -1;

@@ -1,8 +1,20 @@
-#include "ft_strlen.c"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xle-baux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/25 15:35:23 by xle-baux          #+#    #+#             */
+/*   Updated: 2021/11/25 16:27:03 by xle-baux         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char *ft_strrchr(char *str, int c)
+#include "libft.h"
+
+char	*ft_strrchr(char *str, int c)
 {
-	int i;
+	int	i;
 
 	i = ft_strlen(str);
 	while (str[i] != c && i != 0)

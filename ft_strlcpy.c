@@ -1,11 +1,23 @@
-#include "ft_strlen.c"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xle-baux <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/25 15:28:14 by xle-baux          #+#    #+#             */
+/*   Updated: 2021/11/25 16:25:03 by xle-baux         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
+#include "libft.h"
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t len;
+	size_t	len;
 	size_t	i;
 
-	len = strlen(src);
+	len = ft_strlen(src);
 	i = 0;
 	if (dstsize == 0)
 	{
