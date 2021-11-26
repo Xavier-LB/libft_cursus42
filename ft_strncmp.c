@@ -6,7 +6,7 @@
 /*   By: xle-baux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 15:34:46 by xle-baux          #+#    #+#             */
-/*   Updated: 2021/11/25 17:37:10 by xle-baux         ###   ########.fr       */
+/*   Updated: 2021/11/26 12:08:34 by xle-baux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_strncmp(char *s1, char *s2, int n)
 {
-	int	i;
-	int	cmp;
+	int				i;
+	int				cmp;
 
 	i = 0;
 	cmp = 0;
@@ -23,7 +23,7 @@ int	ft_strncmp(char *s1, char *s2, int n)
 	{
 		if (s1[i] != s2[i])
 		{
-			cmp = s2[i] - s1[i];
+			cmp = (unsigned char)s1[i] - (unsigned char)s2[i];
 			return (cmp);
 		}
 		i++;

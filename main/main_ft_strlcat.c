@@ -18,14 +18,19 @@ int	main(int ac, char *av[])
 
 int main()
 {
-    char string[] = "Hello world!";
-    char buffer[19];
-    size_t size = 12;
+    char dest[15];
     int r;
 
-    r = ft_strlcat(buffer,string,size);
+    memset(dest, 0, 15);
+    memset(dest, 'r', 6);
+    memset(dest, 'r', 15);
 
-    printf("Copied '%s' into '%s', length %d\n", string, buffer, r);
+  //  dest[11] = 'a';
+
+
+    r = ft_strlcat(dest, "lorem ipsum dolor sit amet", 5);
+
+    printf("Copied '' into '%s', length %d\n", dest, r);
 
 //    return(0);
 }

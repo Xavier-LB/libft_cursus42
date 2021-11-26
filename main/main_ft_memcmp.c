@@ -6,6 +6,6 @@ int	main()
 {
 	int	a;
 
-	a = memcmp("abc", "acb", sizeof(int) * 3);
+	a = memcmp("test", "test", 5);
 	printf("%d", a);
 }

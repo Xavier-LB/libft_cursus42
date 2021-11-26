@@ -4,5 +4,6 @@
 
 int	main()
 {
-	printf("%s", ft_strnstr("abcdefghijklmnopqr", "lmn", 18));
+	printf("%s", ft_strnstr("abcdefghijklmnopqr", "", 18));
+	
 }

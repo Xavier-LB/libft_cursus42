@@ -20,12 +20,14 @@ int main()
 {
     char string[] = "Hello world!";
     char buffer[19];
-    size_t size = 10;
+    size_t size = 0;
     int r;
+    memset(buffer, 0, 15);
+    memset(buffer, 'r', 6);
 
     r = ft_strlcpy(buffer,string,size);
 
     printf("Copied '%s' into '%s', length %d\n", string, buffer, r);
 
-//    return(0);
+	return(0);
 }

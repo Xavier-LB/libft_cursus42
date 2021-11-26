@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xle-baux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/26 10:28:35 by xle-baux          #+#    #+#             */
-/*   Updated: 2021/11/26 11:16:18 by xle-baux         ###   ########.fr       */
+/*   Created: 2021/11/26 10:38:35 by xle-baux          #+#    #+#             */
+/*   Updated: 2021/11/26 11:05:16 by xle-baux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	while (n-- > 0)
-	{
-		if (*(unsigned char *)s == (unsigned char)c)
-			return ((unsigned char *)s);
-		s++;
-	}
-	return (NULL);
+	void	*p;
+
+	p = malloc(nmemb * size);
+	if (p == NULL)
+		return (NULL);
+	ft_bzero(p, (nmemb * size));
+	return (p);
 }

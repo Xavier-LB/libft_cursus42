@@ -6,12 +6,14 @@
 /*   By: xle-baux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 15:27:33 by xle-baux          #+#    #+#             */
-/*   Updated: 2021/11/25 16:24:30 by xle-baux         ###   ########.fr       */
+/*   Updated: 2021/11/26 17:11:22 by xle-baux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+//#include "ft_strlen.c"
 
+/*
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	len_src;
@@ -39,4 +41,30 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	}
 	dst[i_dst] = '\0';
 	return (len_dst + len_src);
+}
+*/
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+{
+	size_t	i;
+	size_t	j;
+	size_t	src_len;
+	size_t	dst_len;
+
+	j = 0;
+	src_len = ft_strlen(src);
+	dst_len = ft_strlen(dst);
+	i = dst_len;
+	if (i > dstsize)
+		return (dstsize + src_len);
+	while (i < dstsize - 1 && src[j] != '\0')
+	{
+		if (src[j] != '\0')
+		{
+			dst[i] = src[j];
+			j++;
+		}
+		i++;
+	}
+	dst[i] = '\0';
+	return (dst_len + src_len);
 }

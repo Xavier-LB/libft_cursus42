@@ -4,5 +4,7 @@
 
 int main()
 {
-	ft_memchr("abcde", 'c', sizeof(char) * 5);
+	char s[] = "bonjour";
+	char *p = ft_memchr(s, 'o', 4);
+	printf("%s", p);
 }
