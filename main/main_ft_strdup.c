@@ -4,7 +4,7 @@
 
 int	main()
 {
-	const char s[] = "abc";
+	const char s[] = "lorem ipsum dolor sit amet";
 	char *dup;
 
 	dup = ft_strdup(s);
