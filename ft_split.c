@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "ft_strlen.c"
 
 int	is_c(char s, char c)
 {
@@ -36,6 +37,8 @@ int	count_lines(char const *s, char c)
 	return (lines);
 }
 
+//---------------DON TOUCH ABOVE, WORKS WELL-----------------------
+
 int	count_chars(char const *s, char c)
 {
 	int	i;
@@ -54,23 +57,21 @@ int	count_chars(char const *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**split;
-	int	i;
-	int	y;
-	int	x;
+	size_t	i;
+	size_t	y;
+	size_t	x;
 
-	split = (char **)malloc(sizeof(char *) * (count_lines(s, c) + 1));
-	if (split == 0)
-		return (NULL);
+	if(!(split = (char **)malloc(sizeof(char *) * (count_lines(s, c) + 1))))
+		return (0);
 	i = 0;
 	y = 0;
-	while (s[i] != '\0')
+	while (/*s[i] != '\0' */i <= ft_strlen(s))
 	{
 		while (s[i] == c)
 			i++;
 		x = 0;
-		split[y] = (char *)malloc(sizeof(char) * (count_chars(&s[i], c) + 1));
-		if (split[y] == 0)
-			return (NULL);
+		if (!(split[y] = malloc(sizeof(char) * (count_chars(&s[i], c) + 1))))
+			return (0);
 		while (s[i] != c && s[i] != '\0')
 		{
 			split[y][x++] = s[i++];
@@ -78,7 +79,7 @@ char	**ft_split(char const *s, char c)
 		split[y++][x] = '\0';
 		i++;
 	}
-	split[y][x] = NULL;
+	split[y] = 0;
 	return (split);
 }
 
