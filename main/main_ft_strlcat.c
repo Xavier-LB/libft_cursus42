@@ -18,17 +18,17 @@ int	main(int ac, char *av[])
 
 int main()
 {
-    char dest[15];
+    char dest[30];
     int r;
 
-    memset(dest, 0, 15);
-    memset(dest, 'r', 6);
-    memset(dest, 'r', 15);
+    memset(dest, 0, 30);
+//    memset(dest, 'r', 6);
+//    memset(dest, 'r', 15);
 
   //  dest[11] = 'a';
 
 
-    r = ft_strlcat(dest, "lorem ipsum dolor sit amet", 5);
+    r = ft_strlcat(dest, "123", 0);
 
     printf("Copied '' into '%s', length %d\n", dest, r);
 

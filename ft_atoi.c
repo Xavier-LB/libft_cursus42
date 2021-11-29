@@ -6,13 +6,13 @@
 /*   By: xle-baux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 15:24:30 by xle-baux          #+#    #+#             */
-/*   Updated: 2021/11/25 16:48:37 by xle-baux         ###   ########.fr       */
+/*   Updated: 2021/11/29 17:24:57 by xle-baux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	sign;

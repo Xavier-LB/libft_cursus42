@@ -6,16 +6,16 @@
 /*   By: xle-baux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 15:34:46 by xle-baux          #+#    #+#             */
-/*   Updated: 2021/11/26 12:08:34 by xle-baux         ###   ########.fr       */
+/*   Updated: 2021/11/29 17:32:08 by xle-baux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(char *s1, char *s2, int n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int				i;
-	int				cmp;
+	size_t	i;
+	int		cmp;
 
 	i = 0;
 	cmp = 0;

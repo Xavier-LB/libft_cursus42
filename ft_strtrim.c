@@ -6,13 +6,63 @@
 /*   By: xle-baux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 12:26:13 by xle-baux          #+#    #+#             */
-/*   Updated: 2021/11/28 11:24:37 by xle-baux         ###   ########.fr       */
+/*   Updated: 2021/11/29 18:56:04 by xle-baux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+int	is_charset(char const s1, char const *set)
+{
+	int	i;
+
+	i = 0;
+	while (set[i] != '\0')
+	{
+		if (set[i] == s1)
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+int	is_zero(char const *s1, char const *set)
+{
+	int	i;
+
+	i = 0;
+	while (is_charset(s1[i], set) == 0)
+		i++;
+	if (s1[i] == '\0')
+		return (0);
+	return (1);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	
+	int		start;
+	int		end;
+	char	*trim;
+	int		i;
+
+	if (is_zero(s1, set) == 0)
+	{
+		trim = (char *)malloc(sizeof(char));
+		trim[0] = '\0';
+		return (trim);
+	}
+	start = 0;
+	end = ft_strlen(s1);
+	while (is_charset(s1[start], set) == 0)
+		start++;
+	while (is_charset(s1[end - 1], set) == 0)
+		end--;
+	trim = malloc(sizeof(char) * ((end - start) + 1));
+	if (trim == 0)
+		return (0);
+	i = 0;
+	while (i <= (end - (start - i)))
+		trim[i++] = s1[start++];
+	trim[end - (start - i)] = '\0';
+	return (trim);
 }
