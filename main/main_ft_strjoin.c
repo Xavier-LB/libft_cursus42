@@ -4,5 +4,5 @@
 
 int	main()
 {
-	printf("%s", ft_strjoin("abc", "def"));
+	printf("%s", ft_strjoin("where is my ", NULL));
 }

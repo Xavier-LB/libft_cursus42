@@ -6,7 +6,7 @@
 /*   By: xle-baux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 13:57:45 by xle-baux          #+#    #+#             */
-/*   Updated: 2021/11/29 14:13:42 by xle-baux         ###   ########.fr       */
+/*   Updated: 2021/11/30 15:27:44 by xle-baux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*str;
 	int		i;
 
+	if (!s)
+		return (NULL);
 	str = malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (str == 0)
 		return (0);

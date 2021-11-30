@@ -6,7 +6,7 @@
 /*   By: xle-baux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 11:43:14 by xle-baux          #+#    #+#             */
-/*   Updated: 2021/11/29 09:24:58 by xle-baux         ###   ########.fr       */
+/*   Updated: 2021/11/30 16:28:45 by xle-baux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,18 @@ int	count_chars(char const *s, char c)
 	return (chars);
 }
 
+char	**check(char const *s, char c)
+{
+	char	**split;
+
+	if (!s)
+		return (NULL);
+	split = (char **)malloc(sizeof(char *) * (count_lines(s, c) + 1));
+	if (split == 0)
+		return (NULL);
+	return (split);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**split;
@@ -58,9 +70,9 @@ char	**ft_split(char const *s, char c)
 	size_t	y;
 	size_t	x;
 
-	split = (char **)malloc(sizeof(char *) * (count_lines(s, c) + 1));
-	if (split == 0)
-		return (0);
+	split = check(s, c);
+	if (split == NULL)
+		return (NULL);
 	i = 0;
 	y = 0;
 	while (i < ft_strlen(s))

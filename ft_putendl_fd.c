@@ -6,7 +6,7 @@
 /*   By: xle-baux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 15:00:04 by xle-baux          #+#    #+#             */
-/*   Updated: 2021/11/29 15:01:57 by xle-baux         ###   ########.fr       */
+/*   Updated: 2021/11/30 15:33:07 by xle-baux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,13 @@ void	ft_putendl_fd(char *s, int fd)
 {
 	int	i;
 
+	if (!s)
+		return ;
 	i = 0;
-	if (fd != -1)
+	while (s[i] != '\0')
 	{
-		while (s[i] != '\0')
-		{
-			ft_putchar_fd(s[i], fd);
-			i++;
-		}
-		ft_putchar_fd('\n', fd);
+		ft_putchar_fd(s[i], fd);
+		i++;
 	}
+	ft_putchar_fd('\n', fd);
 }

@@ -6,7 +6,7 @@ int		main(void)
 	int i = 0;
 	char **tab;
 		
-	tab = ft_split("   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ", ' ');
+	tab = ft_split("11g1", '1');
 	while (i < 1)
 	{
 		printf("%s\n", tab[i]);

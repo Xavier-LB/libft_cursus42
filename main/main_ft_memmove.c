@@ -15,11 +15,11 @@ int main( void )
 */
 int main(void)
 {
-	char src[50] = "1234567890abcde";
-	char dest[50];
+//	char src[50] = NULL;
+//	char dest[50] = NULL;
 	char *ret;
 
-	ret = ft_memmove(dest, src, 9);
+	ret = ft_memmove(NULL, NULL, 9);
 	printf("%s", ret);
 	return (0);
 }

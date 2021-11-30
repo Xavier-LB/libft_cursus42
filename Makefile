@@ -21,4 +21,9 @@ fclean:		clean
 
 re:		fclean all
 
+so:
+		$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+		gcc -nostartfiles -shared -o libft.so $(OBJS)        
+
+
 .PHONY:		all clean fclean re

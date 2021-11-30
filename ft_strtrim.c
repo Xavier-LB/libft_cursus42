@@ -6,7 +6,7 @@
 /*   By: xle-baux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 12:26:13 by xle-baux          #+#    #+#             */
-/*   Updated: 2021/11/29 18:56:04 by xle-baux         ###   ########.fr       */
+/*   Updated: 2021/11/30 15:18:25 by xle-baux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*trim;
 	int		i;
 
+	if (!s1)
+		return (NULL);
 	if (is_zero(s1, set) == 0)
-	{
-		trim = (char *)malloc(sizeof(char));
-		trim[0] = '\0';
-		return (trim);
-	}
+		return (ft_strdup(""));
 	start = 0;
 	end = ft_strlen(s1);
 	while (is_charset(s1[start], set) == 0)

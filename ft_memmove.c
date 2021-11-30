@@ -6,7 +6,7 @@
 /*   By: xle-baux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 13:56:40 by xle-baux          #+#    #+#             */
-/*   Updated: 2021/11/25 16:30:14 by xle-baux         ###   ########.fr       */
+/*   Updated: 2021/11/30 12:50:29 by xle-baux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	const char	*buffer_src;
 
 	i = 0;
+	if (dest == NULL && src == NULL)
+		return (NULL);
 	buffer_dest = dest;
 	buffer_src = src;
 	if (buffer_dest > buffer_src)

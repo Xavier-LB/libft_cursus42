@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include "../libft.h"
+#include "../ft_atoi.c"
 
 int main(int ac, char *av[])
 {
