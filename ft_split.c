@@ -6,37 +6,29 @@
 /*   By: xle-baux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 11:43:14 by xle-baux          #+#    #+#             */
-/*   Updated: 2021/11/30 16:28:45 by xle-baux         ###   ########.fr       */
+/*   Updated: 2021/12/01 13:57:24 by xle-baux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	is_c(char const s, char c)
+static size_t	count_lines(char const *s, char c)
 {
-	if (s == c)
-		return (1);
-	return (0);
-}
-
-int	count_lines(char const *s, char c)
-{
-	int	i;
-	int	lines;
+	size_t	i;
+	size_t	lines;
 
 	i = 0;
 	lines = 0;
 	while (s[i] != '\0')
 	{
-		if (is_c(s[i], c) == 0
-			&& (is_c(s[i + 1], c) == 1 || s[i + 1] == '\0'))
+		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
 			lines++;
 		i++;
 	}
 	return (lines);
 }
 
-int	count_chars(char const *s, char c)
+static int	count_chars(char const *s, char c)
 {
 	int	i;
 	int	chars;
@@ -51,7 +43,18 @@ int	count_chars(char const *s, char c)
 	return (chars);
 }
 
-char	**check(char const *s, char c)
+static char	**ft_freetab(char **tab)
+{
+	int	i;
+
+	i = 0;
+	while (tab[i])
+		free(tab[i++]);
+	free(tab);
+	return (NULL);
+}
+
+static char	**check(char const *s, char c)
 {
 	char	**split;
 
@@ -75,14 +78,14 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	i = 0;
 	y = 0;
-	while (i < ft_strlen(s))
+	while (i < ft_strlen(s) && y < count_lines(s, c))
 	{
 		while (s[i] == c)
 			i++;
 		x = 0;
 		split[y] = malloc(sizeof(char) * (count_chars(&s[i], c) + 1));
 		if (split[y] == 0)
-			return (0);
+			return (ft_freetab(split));
 		while (s[i] != c && s[i] != '\0')
 			split[y][x++] = s[i++];
 		split[y++][x] = '\0';

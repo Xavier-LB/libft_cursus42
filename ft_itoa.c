@@ -6,13 +6,13 @@
 /*   By: xle-baux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 10:24:41 by xle-baux          #+#    #+#             */
-/*   Updated: 2021/11/29 13:49:39 by xle-baux         ###   ########.fr       */
+/*   Updated: 2021/12/01 09:38:07 by xle-baux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	len_n(long int n)
+static int	len_n(long int n)
 {
 	int	len;
 
@@ -30,7 +30,7 @@ int	len_n(long int n)
 	return (len);
 }
 
-long int	ft_power(long int n, long int p)
+static long int	ft_power(long int n, long int p)
 {
 	long int	buff;
 
