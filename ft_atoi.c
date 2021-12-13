@@ -6,7 +6,7 @@
 /*   By: xle-baux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 15:24:30 by xle-baux          #+#    #+#             */
-/*   Updated: 2021/11/29 17:24:57 by xle-baux         ###   ########.fr       */
+/*   Updated: 2021/12/03 10:38:16 by xle-baux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	sign;
-	int	nb;
+	int			i;
+	int			sign;
+	long int	nb;
 
 	i = 0;
 	sign = 1;

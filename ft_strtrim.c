@@ -6,13 +6,13 @@
 /*   By: xle-baux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 12:26:13 by xle-baux          #+#    #+#             */
-/*   Updated: 2021/11/30 15:18:25 by xle-baux         ###   ########.fr       */
+/*   Updated: 2021/12/02 14:28:29 by xle-baux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	is_charset(char const s1, char const *set)
+static int	is_charset(char const s1, char const *set)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ int	is_charset(char const s1, char const *set)
 	return (1);
 }
 
-int	is_zero(char const *s1, char const *set)
+static int	is_zero(char const *s1, char const *set)
 {
 	int	i;
 
